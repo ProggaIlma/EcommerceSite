@@ -12,8 +12,9 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '@/theme';
 import Box from '@mui/material/Box';
-import { Button } from '@mui/material';
-
+import { IconButton,Typography } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -23,6 +24,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import Toolbar from '@mui/material/Toolbar';
+import DrawerBody from '@/components/Cart';
+
 
 export default function RootLayout(props) {
   const { children } = props;
@@ -61,7 +65,7 @@ export default function RootLayout(props) {
     );
   }
 ///////////Drawer///////////
-const { window } = props;
+
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isClosing, setIsClosing] = React.useState(false);
 
@@ -80,41 +84,10 @@ const { window } = props;
     }
   };
 
-  const drawer = (
-    <div>
-      <Toolbar />
-      <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
 
-  // Remove this const when copying and pasting into your project.
-  const container = window !== undefined ? () => window().document.body : undefined;
 
+
+  const drawerWidth = 400;
 
   return (
     <html lang="en">
@@ -127,11 +100,31 @@ const { window } = props;
                 <TopAppbar />
               </AppBar>
             </HideOnScroll>
-            <Appbar top={top} toggleDrawer={toggleDrawer}/>
-            <Button onClick={toggleDrawer(true)} sx={{marginTop:"100px"}}>Open drawer</Button>
-            <Drawer open={open} onClose={toggleDrawer(false)}>
-        {DrawerList}
-      </Drawer>
+            <Appbar top={top} toggleDrawer={handleDrawerToggle}/>
+            <Box
+        component="nav"
+        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        aria-label="mailbox folders"
+      >
+        <Drawer
+          anchor={'right'}
+          variant="temporary"
+          open={mobileOpen}
+          onTransitionEnd={handleDrawerTransitionEnd}
+          onClose={handleDrawerClose}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          
+          sx={{
+            display: { xs: 'block' },
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth,height:"100%" },
+          }}
+        >
+         <DrawerBody handleDrawerToggle={handleDrawerToggle}/>
+        </Drawer>
+       
+      </Box>
             {children}
            
           </ThemeProvider>
@@ -144,74 +137,3 @@ const { window } = props;
 
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-// import { ThemeProvider } from '@mui/material/styles';
-// import theme from '../../theme';
-// import Appbar from '@/components/Appbar'
-// import TopAppbar from '@/components/TopAppbar';
-// import * as React from 'react';
-// import useScrollTrigger from '@mui/material/useScrollTrigger';
-// import AppBar from '@mui/material/AppBar';
-// import Toolbar from '@mui/material/Toolbar';
-// import Slide from '@mui/material/Slide';
-// import { Typography } from '@mui/material';
-
-// function HideOnScroll(props) {
-//   const { children, window } = props;
-//   // Note that you normally won't need to set the window ref as useScrollTrigger
-//   // will default to window.
-//   // This is only being set here because the demo is in an iframe.
-//   // const trigger = useScrollTrigger({
-//   //   target: window ? window() : undefined,
-//   // });
-
-//   return (
-//     <Slide appear={false} direction="down" >
-//       {children ?? <div />}
-//     </Slide>
-//   );
-// }
-//  export default function RootLayout(props) {
-//    const { children } = props;
-//    return (
-//      <html lang="en">
-//        <body>
-//           <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-//           <ThemeProvider theme={theme}>
-//           <HideOnScroll {...props}>
-//           <AppBar>
-//           <Toolbar>
-//             <Typography variant="h6" component="div">
-//               Scroll to hide App bar
-//             </Typography>
-//           </Toolbar>
-//         </AppBar>
-//       </HideOnScroll>
-//       <Toolbar />
-//             {/* <Appbar/> */}
-//               {children}
-//           </ThemeProvider>
-//           </AppRouterCacheProvider>
-//        </body>
-//      </html>
-//    );
-//  }

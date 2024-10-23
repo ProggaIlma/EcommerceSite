@@ -10,7 +10,7 @@ import { Typography,Button,Divider } from '@mui/material';
 
 export default function FlashSale() {
     return (
-        <Box sx={{ flexGrow: 1,backgroundColor:"white" }} className='my-4 mt-10 bg-white'>
+        <Box sx={{ flexGrow: 1,backgroundColor:"white" }} className='my-4 mt-5 bg-white'>
          <Box sx={{ px: 3 ,py:1}}>   
                <div className='flex justify-between w-full items-center'>
                 <Typography className='text-sm' sx={{color:"#3f51b5"}}>On Sale Now</Typography>

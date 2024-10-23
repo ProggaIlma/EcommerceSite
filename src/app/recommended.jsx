@@ -12,7 +12,7 @@ import { Typography,Button,Divider } from '@mui/material';
 
 export default function Recom() {
     return (
-        <Box sx={{ flexGrow: 1}} class='m-4 mt-10 bg-white'>
+        <Box sx={{ flexGrow: 1}} className='my-5 bg-white'>
         
             <Box sx={{ py: 3 }}>
             <Grid container spacing={2} >

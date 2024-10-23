@@ -18,7 +18,8 @@ export default function Catcard({catname,img}) {
           component="img"
           image={img}
           alt="green iguana"
-          sx={{ objectFit: "contain" ,width:'80px',height:'80px',paddingTop:"15px"
+          sx={{ objectFit: "contain" ,width:'80px',height:'80px',paddingTop:"15px",transition: "transform 0.7s ease-in-out",
+            "&:hover": { transform: "scale3d(1.05, 1.05, 1)" }
           }}
         />
         <CardContent>

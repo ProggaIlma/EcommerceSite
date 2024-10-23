@@ -12,9 +12,9 @@ import { Typography,Button,Divider } from '@mui/material';
 
 export default function Category() {
     return (
-        <Box sx={{ flexGrow: 1}} class='m-4 mt-10 bg-white'>
+        <Box sx={{ flexGrow: 1}} className='bg-white'>
         
-            <Box sx={{ py: 3 }}>
+            <Box >
             <Grid container columns={24}>
 
                 <Grid size={{ xs: 12, md:  3 }}>

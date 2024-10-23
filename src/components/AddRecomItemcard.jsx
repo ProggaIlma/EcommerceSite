@@ -15,7 +15,8 @@ export default function AddRecomItemcard({image}) {
           component="img"
           image={image}
           alt="green iguana"
-          sx={{ objectFit: "contain" }}
+          sx={{ objectFit: "contain",transition: "transform 0.7s ease-in-out",
+            "&:hover": { transform: "scale3d(1.05, 1.05, 1)" } }}
         />
         <CardContent>
 
