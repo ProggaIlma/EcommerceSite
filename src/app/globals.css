@@ -27,6 +27,9 @@ body {
 .secondary_color{
   color:#e91e63
 }
+.bg_secondary_color{
+  background-color:#e91e63
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;

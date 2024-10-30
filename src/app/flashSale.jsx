@@ -20,24 +20,19 @@ export default function FlashSale() {
             <Divider /> 
             <Box sx={{ py: 3 }}>
             <Grid container spacing={2} >
-                <Grid size={{ xs: 6, md: 2 }}>
+                <Grid size={{ xs: 6, md: 3 }}>
                     <Itemcard />
                 </Grid>
-                <Grid size={{ xs: 6, md: 2 }}>
+                <Grid size={{ xs: 6, md: 3 }}>
                     <Itemcard />
                 </Grid> 
-                <Grid size={{ xs: 6, md: 2 }}>
+                <Grid size={{ xs: 6, md: 3 }}>
                     <Itemcard />
                 </Grid>
-                 <Grid size={{ xs: 6, md: 2 }}>
+                 <Grid size={{ xs: 6, md: 3 }}>
                     <Itemcard />
                 </Grid>
-                 <Grid size={{ xs: 6, md: 2 }}>
-                    <Itemcard />
-                </Grid>
-                 <Grid size={{ xs: 6, md: 2 }}>
-                    <Itemcard />
-                </Grid>
+                
             </Grid></Box>
         </Box>
     );

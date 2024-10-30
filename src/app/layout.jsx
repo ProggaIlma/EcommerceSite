@@ -12,20 +12,9 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '@/theme';
 import Box from '@mui/material/Box';
-import { IconButton,Typography } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import Toolbar from '@mui/material/Toolbar';
 import DrawerBody from '@/components/Cart';
+import { CartProvider } from '@/shared/CartContext/CartCtx';
 
 
 export default function RootLayout(props) {
@@ -83,24 +72,20 @@ export default function RootLayout(props) {
       setMobileOpen(!mobileOpen);
     }
   };
-
-
-
-
   const drawerWidth = 400;
-
   return (
     <html lang="en">
       <body>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
-          
-            <HideOnScroll {...props}>
-              <AppBar>
+          <CartProvider>
+          <Appbar top={'0px'} toggleDrawer={handleDrawerToggle}/>
+            {/* <HideOnScroll {...props}> */}
+              {/* <AppBar> */}
                 <TopAppbar />
-              </AppBar>
-            </HideOnScroll>
-            <Appbar top={top} toggleDrawer={handleDrawerToggle}/>
+              {/* </AppBar> */}
+            {/* </HideOnScroll> */}
+          
             <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
@@ -124,9 +109,9 @@ export default function RootLayout(props) {
          <DrawerBody handleDrawerToggle={handleDrawerToggle}/>
         </Drawer>
        
-      </Box>
+            </Box>
             {children}
-           
+            </CartProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
         <Footer></Footer>

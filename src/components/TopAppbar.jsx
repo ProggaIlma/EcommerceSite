@@ -2,7 +2,7 @@
 "use client";
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
+import {Box,Button} from '@mui/material';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -13,9 +13,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import LoginIcon from '@mui/icons-material/Login';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-
+import MouseHoverPopover from './AppBarCategoryPopover';
 
 
 export default function TopAppbar() {
@@ -41,7 +40,18 @@ export default function TopAppbar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
+  const kitchenItems = [
+    "Stainless Steel Knife Set",
+    "Non-Stick Frying Pan",
+    "Blender",
+    "Wooden Cutting Board",
+    "Microwave Oven",
+    "Electric Kettle",
+    "Measuring Cups and Spoons Set",
+    "Glass Mixing Bowls",
+    "Toaster",
+    "Silicone Spatula Set"
+  ]
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
     <Menu
@@ -87,7 +97,7 @@ export default function TopAppbar() {
             <LoginIcon />
           </Badge>
         </IconButton>
-        <p>Login</p>
+        <MouseHoverPopover menuname={'Kitchen Appliance'} menulist={kitchenItems}/>
       </MenuItem>
       <MenuItem>
         <IconButton
@@ -118,25 +128,29 @@ export default function TopAppbar() {
 
   return (
     <Box sx={{ flexGrow: 1,boxShadow:'none' }}>
-      <AppBar position="fixed" sx={{boxShadow:'none' }}>
-        <Toolbar sx={{minHeight:"30px !important"}}>
+      <AppBar position="fixed"  sx={{boxShadow:'none',top: { sm: '0px', md: '56px' } ,transition: 'top 0.3s'}}>
+        <Toolbar sx={{minHeight:"50px !important",backgroundColor:"white"}} className='shadow-2xl'>
       
         
         
-          <Box sx={{ flexGrow: 1 }} />
+        
           <Box sx={{ display: { xs: 'none', md: 'flex' }}}>
-            <Typography className="cursor-pointer text-white text-xs mr-6" sx={{ "&:hover": { opacity: "0.8" } }}>
-            HELP & SUPPORT
-            </Typography>
-
-            <Typography className="cursor-pointer text-white text-xs mr-6" sx={{ "&:hover": { opacity: "0.8" } }}>
-            LOGIN
-            </Typography>
-
-            <Typography className="cursor-pointer text-white text-xs mr-6" sx={{ "&:hover": { opacity: "0.8" } }}>
-            SIGN UP
-            </Typography>
+          <MouseHoverPopover menuname={'Home Appliances'} menulist={kitchenItems}/>
           
+
+            <MouseHoverPopover menuname={'Kitchen Appliances'} menulist={kitchenItems}/>
+
+
+            <MouseHoverPopover menuname={'Kids'} menulist={kitchenItems}/>
+          
+
+          <MouseHoverPopover menuname={'Make Up'} menulist={kitchenItems}/>
+
+
+          <Button className='bg_secondary_color rounded-3xl text-white mr-2 px-5 py-2 text-xs'>Clearance Sale</Button>
+          <Button className='bg-lime-600 rounded-3xl text-white mr-2 px-5 text-xs py-2'>Buy 1 Get 1</Button>
+          <Button className='bg-purple-950 rounded-3xl text-white mr-2 px-5 text-xs py-2'> Anniversary Sale</Button>
+
            
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

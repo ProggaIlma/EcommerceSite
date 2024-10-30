@@ -1,9 +1,14 @@
 import { IconButton, Typography, Button } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+
 import Divider from '@mui/material/Divider';
 import Toolbar from '@mui/material/Toolbar';
 import CartItem from './CartItem';
+import { useContext } from 'react';
+import { CartContext } from '@/shared/CartContext/CartCtx';
+import { Fragment } from 'react';
 
 const images = [
   '/images/one.jpg',
@@ -13,6 +18,8 @@ const images = [
 ];
 
 export default function DrawerBody({ handleDrawerToggle }) {
+  const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } = useContext(CartContext)
+
   return (
     <div className="bg-slate-200">
       <Toolbar className="bg-white">
@@ -25,7 +32,7 @@ export default function DrawerBody({ handleDrawerToggle }) {
       </Toolbar>
       <Divider />
 
-      {/* <div className="flex justify-center items-center flex-col bg-slate-200" >
+    {  cartItems.length==0 ?<div className="flex justify-center items-center flex-col bg-slate-200" >
 
         <ShoppingBagIcon sx={{ height: '116px', width: '130px', paddingTop: '40px' }} />
         <Typography className="mt-8">Your Shopping Bag is Empty</Typography>
@@ -34,20 +41,12 @@ export default function DrawerBody({ handleDrawerToggle }) {
         </Button>
       
       
-      </div> */}
+      </div>:
+      <Fragment>
       <div className="p-2 overflow-auto" style={{ height: '430px' }}>
-      <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
-        <CartItem handleDrawerToggle={handleDrawerToggle} />
+      {cartItems.map((item) => (
+      <CartItem removeFromCart={removeFromCart} item={item}/>
+        ))}
       </div>
       <div className="bg-white flex justify-between pt-3 px-3">
         <div>
@@ -59,7 +58,7 @@ export default function DrawerBody({ handleDrawerToggle }) {
             PROCEED
           </Button>
         </div>
-      </div>
+      </div></Fragment>}
     </div>
   );
 }

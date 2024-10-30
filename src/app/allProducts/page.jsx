@@ -1,18 +1,24 @@
 
 "use client";
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid2';
 import RecomItemcard from '@/components/RecomItemcard';
 
+const AllProducts = () => {
 
+  return (
+    <div className="mt-20 pt-6">
+   <div class=" text-white text-xl h-[120px] mb-2 md:mb-8 flex justify-center items-center" 
+   style={{
+    backgroundImage: "url('https://bk.shajgoj.com/storage/2023/02/Rajkonna-catagory-web-banner.png')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center"
+}}>
 
-export default function Recom() {
-    return (
-        <Box sx={{ flexGrow: 1}} className='my-5 bg-white'>
-        
-            <Box sx={{ py: 3 }}>
-            <Grid container spacing={2} >
+   </div>
+  
+   <Grid container spacing={2} >
                 <Grid size={{ xs: 6, md: 3 }}>
                     <RecomItemcard />
                 </Grid>
@@ -26,7 +32,10 @@ export default function Recom() {
                     <RecomItemcard />
                 </Grid>
              
-            </Grid></Box>
-        </Box>
-    );
-}
+            </Grid>
+   
+    </div>
+  );
+};
+
+export default AllProducts;

@@ -17,7 +17,8 @@ import LoginIcon from '@mui/icons-material/Login';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import MoreIcon from '@mui/icons-material/MoreVert';
-
+import { useContext } from 'react';
+import { CartContext } from '@/shared/CartContext/CartCtx';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -62,6 +63,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Appbar({top,toggleDrawer}) {
+  const { cartItems, addToCart, removeFromCart, clearCart, getCartTotal } = useContext(CartContext)
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -184,7 +187,7 @@ export default function Appbar({top,toggleDrawer}) {
             />
           </Search>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            
+            <Badge badgeContent={cartItems.length} color="secondary">
             <IconButton
               size="small"
               edge="end"
@@ -198,7 +201,7 @@ export default function Appbar({top,toggleDrawer}) {
               }}
             >
               <ShoppingCartOutlinedIcon />
-            </IconButton>
+            </IconButton></Badge>
           </Box>
 
 
