@@ -129,7 +129,7 @@ export default function TopAppbar() {
   return (
     <Box sx={{ flexGrow: 1,boxShadow:'none' }}>
       <AppBar position="fixed"  sx={{boxShadow:'none',top: { sm: '0px', md: '56px' } ,transition: 'top 0.3s'}}>
-        <Toolbar sx={{minHeight:"50px !important",backgroundColor:"white"}} className='shadow-2xl'>
+        <Toolbar sx={{minHeight:"50px !important",backgroundColor:"white"}} className='shadow-xl'>
       
         
         
@@ -148,7 +148,7 @@ export default function TopAppbar() {
 
 
           <Button className='bg_secondary_color rounded-3xl text-white mr-2 px-5 py-2 text-xs'>Clearance Sale</Button>
-          <Button className='bg-lime-600 rounded-3xl text-white mr-2 px-5 text-xs py-2'>Buy 1 Get 1</Button>
+          <Button className='bg_primary_color rounded-3xl text-white mr-2 px-5 text-xs py-2'>Buy 1 Get 1</Button>
           <Button className='bg-purple-950 rounded-3xl text-white mr-2 px-5 text-xs py-2'> Anniversary Sale</Button>
 
            

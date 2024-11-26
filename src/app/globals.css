@@ -22,13 +22,19 @@ body {
 }
 
 .default_color{
-  color:#3f51b5
+  color:#44776d
 }
 .secondary_color{
-  color:#e91e63
+  color:#ea4b2d
+}
+.color_black{
+  color:'#232323'
 }
 .bg_secondary_color{
-  background-color:#e91e63
+  background-color:#ea4b2d
+}
+.bg_primary_color{
+  background-color:#44776d
 }
 @layer utilities {
   .text-balance {

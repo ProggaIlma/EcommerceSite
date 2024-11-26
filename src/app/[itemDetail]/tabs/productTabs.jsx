@@ -61,7 +61,7 @@ export default function ProductTabs() {
 }
 const styles = {
   selected: {
-    backgroundColor: '#3f51b5',
+    backgroundColor: '#44776d',
     color: 'white',
     padding: '12px',
     marginRight: '5px',

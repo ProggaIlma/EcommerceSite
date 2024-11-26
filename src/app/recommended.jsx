@@ -12,7 +12,7 @@ export default function Recom() {
         <Box sx={{ flexGrow: 1}} className='my-5 bg-white'>
         
             <Box sx={{ py: 3 }}>
-            <Grid container spacing={2} >
+            <Grid container spacing={2} columns={15}>
                 <Grid size={{ xs: 6, md: 3 }}>
                     <RecomItemcard />
                 </Grid>
@@ -25,7 +25,9 @@ export default function Recom() {
                  <Grid size={{ xs: 6, md: 3 }}>
                     <RecomItemcard />
                 </Grid>
-             
+                <Grid size={{ xs: 6, md: 3 }}>
+                    <RecomItemcard />
+                </Grid>
             </Grid></Box>
         </Box>
     );

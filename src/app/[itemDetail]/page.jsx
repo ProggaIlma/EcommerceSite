@@ -77,24 +77,26 @@ const ItemDetail = () => {
     <div className="mt-20 p-5">
       <Box sx={{ p: 4 }}>
         <Grid container spacing={2}>
-          <Grid size={{ xs: 12 }} className="flex justify-end">
-            <Typography  className="bg_secondary_color text-white py-2 px-2 ml-2 rounded-xl uppercase bold text-sm">
-              {' '}
-              Recommended for you{' '}
-            </Typography>
-          </Grid>
+          
 
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ xs: 12, md: 5 }} className='mt-10'>
             <CustomPaging images={images} />
           </Grid>
 
-          <Grid size={{ xs: 12, md: 5 }}>
+          <Grid size={{ xs: 12, md: 5 }} className='mt-3'>
+         
             <ProductInfo />
           </Grid>
 
         
           
-          <Grid  size={{ xs: 12, md: 2 }}><AddRecomItemcard  product={products[0]}/></Grid>
+          <Grid  size={{ xs: 12,sm:6, md: 2 }}>
+          <Typography  className="bg_secondary_color text-white py-2 px-2 mb-2  rounded-xl uppercase bold text-xs" sx={{textAlign:'center'}}>
+              {' '}
+              Recommended for you{' '}
+            </Typography>
+            <AddRecomItemcard  product={products[0]}/>
+            </Grid>
           
        
 
@@ -113,11 +115,15 @@ const ItemDetail = () => {
             </Typography>
           </Grid>
          
+         <Grid container columns={{xs:12,lg:15}} size={{ xs: 12 }}>
+
+         
           {products.map((product,index)=>
-           ( <Grid  size={{ xs: 12, md: 3, lg: 3 }} key={index}><AddRecomItemcard  product={product}/></Grid>)
+           ( <Grid  size={{ xs: 6, md: 3, lg: 3 }} key={index}>
+            <AddRecomItemcard  product={product}/></Grid>)
         
           )}
-        
+        </Grid>
         </Grid>
       </Box>
     </div>

@@ -16,8 +16,17 @@ const theme = createTheme({
     fontFamily: roboto.style.fontFamily,
   }, 
   palette: {
-    primary: indigo,
-    secondary: pink,
+    primary: {
+      main: '#44776d',
+      // light: will be calculated from palette.primary.main,
+       dark: '#44776d',
+      contrastText: '#ffffff',    },
+    secondary: {
+      main: '#ea4b2d',
+      
+      // dark: will be calculated from palette.secondary.main,
+      contrastText: '#ffffff',
+    }
   },
   MuiButtonBase: {
     defaultProps: {

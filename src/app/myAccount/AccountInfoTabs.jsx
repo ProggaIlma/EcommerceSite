@@ -66,7 +66,7 @@ export default function AccountInfoTabs() {
 }
 const styles = {
   selected: {
-    color: '#3f51b5',
+    color: '#44776d',
 
     marginRight: '5px',
 

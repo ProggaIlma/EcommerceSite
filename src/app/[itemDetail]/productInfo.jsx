@@ -15,7 +15,7 @@ const ProductInfo = () => {
         </Grid>
 
         <div className="flex justify-between items-center w-full">
-          <Typography gutterBottom variant="h5" component="div" sx={{ color: '#f57224', fontWeight: 'bold' }} className="text-lg mr-2">
+          <Typography gutterBottom variant="h5" component="div" sx={{ color: '#EA4B2D', fontWeight: 'bold' }} className="text-lg mr-2">
             ৳ 399.00
           </Typography>
           <TextRating />

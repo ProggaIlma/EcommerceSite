@@ -41,7 +41,7 @@ export default function MouseHoverPopover({ menuname, menulist }) {
                         cursor: 'pointer',
                         color: '#00000099',
                         '&:hover': {
-                          color: '#3f51b5',
+                          color: '#ea4b2d',
                         },
                       }
                     : i==0 ?{
@@ -50,7 +50,7 @@ export default function MouseHoverPopover({ menuname, menulist }) {
                         cursor: 'pointer',
                         color: '#00000099',
                         '&:hover': {
-                          color: '#3f51b5',
+                          color: '#ea4b2d',
                         },
                       }: {
                         pt: 1,
@@ -58,7 +58,7 @@ export default function MouseHoverPopover({ menuname, menulist }) {
                         cursor: 'pointer',
                         color: '#00000099',
                         '&:hover': {
-                          color: '#3f51b5',
+                          color: '#ea4b2d',
                         },
                       }
                 }
@@ -69,8 +69,8 @@ export default function MouseHoverPopover({ menuname, menulist }) {
           </React.Fragment>
         }
       >
-        <Typography className="uppercase cursor-pointer text-xs mr-6 ml-3"
-         sx={{ '&:hover': { opacity: '0.8',color:'#e91e63',fontWeight:'bold' },color:'black' }}>
+        <Typography className="uppercase cursor-pointer text-xs mr-6 ml-3 font-bold"
+         sx={{ '&:hover': { opacity: '0.8',color:'#ea4b2d',fontWeight:'bold' },color:'#232323' }}>
           {menuname}
         </Typography>{' '}
       </HtmlTooltip>

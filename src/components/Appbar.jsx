@@ -23,7 +23,8 @@ import { CartContext } from '@/shared/CartContext/CartCtx';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
-  borderRadius: '0px',
+  borderRadius: '15px',
+  border:'2px solid #ea4b2d',
   backgroundColor:  '#ffffff',
   '&:hover': {
     backgroundColor: '#ffffff',
@@ -39,19 +40,20 @@ const Search = styled('div')(({ theme }) => ({
 
 const SearchIconWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 1),
-  height: '100%',
+  height: '100%',borderRadius: '15px',
   position: 'absolute',
   pointerEvents: 'none',
-  display: 'flex',backgroundColor:'#e0f2f1',
+  display: 'flex',color:'#00000099',
   alignItems: 'center',
   justifyContent: 'center',
-  right:'0'
+  
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: '#000000',fontSize:"14px",
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
+    
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
@@ -164,22 +166,25 @@ export default function Appbar({top,toggleDrawer}) {
   
 
   return (
-    <Box sx={{ flexGrow: 1,boxShadow:'none' }}>
-      <AppBar position="fixed" sx={{boxShadow:'none',top: { sm: '0px', md: top } ,transition: 'top 0.3s'}}>
-        <Toolbar className='w-full'>
-          
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="fixed" sx={{top: { sm: '0px', md: top } }}>
+        <Toolbar className='w-full bg-white'>
+          <div className='flex flex-col justify-center items-center'>
+          <img src='/images/logo.jpg' style={{height:'30px',width:'30px'}}/>
           <Typography
-            variant="h6"
+            
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+            sx={{ display: { xs: 'none', sm: 'block' } ,color:'#232323'}}
+            className='text-xs ml-1 font-bold'
            
           >
-            APEXCART
-          </Typography>
+            
+            ApexCart
+          </Typography></div>
           <Search>
             <SearchIconWrapper>
-              <SearchIcon sx={{color:"#3f51b5"}}/>
+              <SearchIcon color="primary"/>
             </SearchIconWrapper>
             <StyledInputBase
               placeholder="Search in Apexcart"
@@ -188,20 +193,11 @@ export default function Appbar({top,toggleDrawer}) {
           </Search>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <Badge badgeContent={cartItems.length} color="secondary">
-            <IconButton
-              size="small"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-             // onClick={handleProfileMenuOpen}
-              color="inherit"
-              onClick={()=>{
+           
+              <ShoppingCartOutlinedIcon color='primary'  onClick={()=>{
                 toggleDrawer( true);
-              }}
-            >
-              <ShoppingCartOutlinedIcon />
-            </IconButton></Badge>
+              }}/>
+            </Badge>
           </Box>
 
 

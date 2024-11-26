@@ -5,7 +5,7 @@ import TopAppbar from '@/components/TopAppbar';
 import AppBar from '@mui/material/AppBar';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import "./globals.css";
-import Slide from '@mui/material/Slide';
+import {Slide,Divider} from '@mui/material';
 import Appbar from '@/components/Appbar';
 import Footer from '@/components/Footer';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
@@ -82,6 +82,7 @@ export default function RootLayout(props) {
           <Appbar top={'0px'} toggleDrawer={handleDrawerToggle}/>
             {/* <HideOnScroll {...props}> */}
               {/* <AppBar> */}
+              <Divider/>
                 <TopAppbar />
               {/* </AppBar> */}
             {/* </HideOnScroll> */}

@@ -15,7 +15,7 @@ import { useContext, useEffect, useState } from 'react'
 
   return (
    
-    <Card sx={{ maxWidth: 545, borderRadius: '0px', boxShadow: 'none' }}>
+    <Card sx={{ maxWidth: 545, borderRadius: '10px', boxShadow: 'none' }}>
       
         <CardMedia
           component="img"
@@ -26,17 +26,22 @@ import { useContext, useEffect, useState } from 'react'
         />
         <CardContent>
 
-          <Typography variant="body2"component="div" sx={{ color: 'text.secondary',height:"60px"}} className='text-sm'>
+          <Typography variant="body2"component="div" sx={{ color: 'text.secondary',minHeight:"50px"}} className='text-sm'>
 
             {product?.title}
           </Typography>
          
-          <div className="flex items-center text-xs">
+          <div className="flex  items-center text-xs">
 
-          <Typography gutterBottom variant="h5" component="div" sx={{ color: '#f57224' }} className='text-lg mr-2'>
+          <Typography gutterBottom variant="h5" component="div" color='secondary' className='text-lg mr-2'>
             ৳  {product?.price}
           </Typography>
-            <Typography className="text-xs grey">-74%</Typography>
+          
+
+<Typography sx={{ mr: 1, textDecoration: 'line-through', color: "#9e9e9e" }} className='text-xs'>৳1200</Typography>
+
+{/* <Typography className='text-xs'>-74%</Typography> */}
+
           </div>
           <div className="w-full flex items-center justify-center">
           <Button variant="contained" sx={{width:'100%'}} onClick={() => addToCart(product)}>Add to cart</Button>  </div>

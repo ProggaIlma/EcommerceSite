@@ -10,7 +10,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 
 export default function Itemcard() {
   return (
-    <Card sx={{ maxWidth: 545, borderRadius: '0px', boxShadow: 'none' }}>
+    <Card sx={{ maxWidth: 545, borderRadius: '10px', boxShadow: 'none' }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -25,7 +25,7 @@ export default function Itemcard() {
 
             NESTLE NESCAFE Classic Instant Coffee Jar 100g
           </Typography>
-          <Typography gutterBottom variant="h5" component="div" sx={{ color: '#f57224' }} className='text-lg'>
+          <Typography gutterBottom variant="h5" component="div" sx={{ color: '#EA4B2D' }} className='text-lg'>
             ৳399
           </Typography>
           <div className="flex align-center text-xs">

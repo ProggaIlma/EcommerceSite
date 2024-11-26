@@ -13,7 +13,7 @@ export default function Orders() {
     <Fragment>
 
    {!showDetails && <Grid container className='p-7 pb-20'>
-      <Grid size={{ xs: 12 }} className="flex justify-between p-2 items-center rounded-md" sx={{ backgroundColor: '#3f51b5', color: 'white' }}>
+      <Grid size={{ xs: 12 }} className="flex justify-between p-2 items-center rounded-md" sx={{ backgroundColor: '#44776d', color: 'white' }}>
         <Typography>
           ORDER ID <span>#12fgw2</span>
         </Typography>

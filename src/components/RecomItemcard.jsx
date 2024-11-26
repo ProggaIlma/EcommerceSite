@@ -27,7 +27,7 @@ export default function RecomItemcard() {
          
           <div className="flex items-center text-xs">
 
-          <Typography gutterBottom variant="h5" component="div" sx={{ color: '#f57224' }} className='text-lg mr-2'>
+          <Typography gutterBottom variant="h5" component="div" sx={{ color: '#EA4B2D' }} className='text-lg mr-2'>
             ৳399
           </Typography>
             <Typography className="text-xs grey">-74%</Typography>

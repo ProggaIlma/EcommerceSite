@@ -1,88 +1,122 @@
+'use client';
 
+import React from 'react';
+import { Box, Container, Grid, Typography, IconButton } from '@mui/material';
+import { Facebook, Twitter, Instagram } from '@mui/icons-material';
 
+function Footer() {
+  return (
+    <Box sx={{ backgroundColor: 'aliceblue'}}>
+      {' '}
+      {/* Background color set to aliceblue */}
+      <Box sx={{ position: 'relative', overflow: 'hidden', color: 'white' }}>
+        {/* Wave SVG with color #44776d */}
+        <Box
+          component="svg"
+          viewBox="0 0 1240 280" // Increased the viewBox height to make the wave taller
+          sx={{
+            fill: '#44776d', // Wave color set to #44776d
+          }}
+        >
+          <path d="M0,192L40,202.7C80,213,160,235,240,237.3C320,240,400,224,480,213.3C560,202,640,192,720,186.7C800,181,880,181,960,186.7C1040,192,1120,202,1200,213.3C1280,224,1360,235,1400,240L1440,245L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+        </Box>
 
+        <Box
+          sx={{
+            position: 'relative',
+            backgroundColor: '#44776d',
+            zIndex: 1, // Ensure content appears above wave
+          }}
+        >
+          <Container maxWidth="lg">
+            <Grid container spacing={4}>
+              {/* Logo */}
+              <Grid item xs={12} sm={4} display="flex" flexDirection="column" >
+                <Typography variant="body2"align='center' className="text-[28px] pt-2 bold">
+                  ApexCart
+                </Typography>
+                <Typography variant="body2"align='center' className="text-[14px] pt-2">
+                  Share Your Love on Social Media
+                </Typography>
+                <Box mt={2} display="flex" justifyContent='center'>
+                  <IconButton href="https://www.facebook.com" color="inherit" target="_blank" rel="noopener">
+                    <Facebook />
+                  </IconButton>
+                  <IconButton href="https://www.twitter.com" color="inherit" target="_blank" rel="noopener">
+                    <Twitter />
+                  </IconButton>
+                  <IconButton href="https://www.instagram.com" color="inherit" target="_blank" rel="noopener">
+                    <Instagram />
+                  </IconButton>
+                </Box>
+                <Typography variant="body2" align="center" gutterBottom className="text-[14px] pt-2">
+                  Payments Accepted:
+                </Typography>
+                {/* Payments Accepted */}
+                <Box mt={2} display="flex" justifyContent="center">
+                  <Box display="flex" >
+                    <img src={'/images/visa.jpg'} alt="Visa" style={{ width: '40px', margin: '0 8px' }} />
+                    <img src={'/images/mastercard.jpg'} alt="MasterCard" style={{ width: '40px', margin: '0 8px' }} />
+                    <img src={'/images/paypal.jpg'} alt="PayPal" style={{ width: '40px', margin: '0 8px' }} />
+                  </Box>
+                </Box>
+              </Grid>
+              {/* Top Categories */}
+              <Grid item xs={12} sm={3}>
+                <Typography variant="h6" className="text-[16px] pt-2 secondary_color" gutterBottom>
+                  Top Categories
+                </Typography>
+                {['Makeup', 'Skin', 'Hair', 'Personal Care', 'Natural'].map((category) => (
+                  <Typography variant="body2" key={category} className="text-[14px] pt-2">
+                    <a href={`/${category.toLowerCase().replace(/ & /g, '-')}`} className="text-white hover:text-[#ea4b2d] no-underline">
+                      {category}
+                    </a>
+                  </Typography>
+                ))}
+              </Grid>
 
+              {/* Quick Links */}
+              <Grid item xs={12} sm={3}>
+                <Typography variant="h6" className="text-[16px] pt-2 secondary_color" gutterBottom>
+                  Quick Links
+                </Typography>
+                {['Offers', 'Mens Products', 'Skin Concerns', 'New Arrival', 'Makeup'].map((link) => (
+                  <Typography variant="body2" key={link} className="text-[14px] pt-2">
+                    <a href={`/${link.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="text-white hover:text-[#ea4b2d] no-underline">
+                      {link}
+                    </a>
+                  </Typography>
+                ))}
+              </Grid>
 
-"use client";
+              {/* Help */}
+              <Grid item xs={12} sm={2}>
+                <Typography variant="h6" className="text-[16px] pt-2 secondary_color" gutterBottom>
+                  Help
+                </Typography>
+                {['Contact Us', 'FAQs', 'Shipping & Delivery', 'Terms & Conditions', 'Refund & Return Policy', 'Privacy Policy'].map((helpLink) => (
+                  <Typography variant="body2" key={helpLink} className="text-[14px] pt-2">
+                    <a href={`/${helpLink.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`} className="text-white hover:text-[#ea4b2d] no-underline">
+                      {helpLink}
+                    </a>
+                  </Typography>
+                ))}
+              </Grid>
+            </Grid>
 
-import styles from './Footer.module.css'
-import * as React from 'react';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import PhoneIcon from '@mui/icons-material/Phone';
-import EmailIcon from '@mui/icons-material/Email';
-import { Typography } from '@mui/material';
+            {/* Social Media Icons */}
 
-export default function Footer() {
-
-	return (
-
-
-
-
-		<React.Fragment>
-
-			<footer className={styles.footer_distributed}>
-
-				<div className={styles.footer_left}>
-
-					<h3>Company<span>logo</span></h3>
-
-					<p className={styles.footer_links}>
-						<a href="#" className={styles.link_1}>Home&nbsp;</a>
-
-						<a href="#">Blog&nbsp; </a>
-
-						<a href="#">Pricing&nbsp; </a>
-
-						<a href="#">About&nbsp; </a>
-
-						<a href="#">Faq&nbsp; </a>
-
-						<a href="#">Contact </a>
-					</p>
-
-					<p className={styles.footer_company_name}>Company Name © 2015</p>
-				</div>
-
-				<div className={styles.footer_center}>
-
-					<div className='flex  items-center'>
-						<LocationOnIcon className=' mr-2' />
-						<p>444 S. Cedros Ave, Solana Beach, California</p>
-					</div>
-
-					<div className='flex  items-center'>
-						<PhoneIcon className=' mr-2' />
-						<p>+1.555.555.5555</p>
-					</div>
-
-					<div className='flex  items-center'>
-						<EmailIcon className=' mr-2' />	
-					<p><a href="mailto:support@company.com">support@company.com</a></p>
-					</div>
-
-				</div>
-
-				<div className={styles.footer_right}>
-
-
-
-					<div className={styles.footer_icons}>
-						<Typography>Follow us on:</Typography>
-						<FacebookIcon className={styles.icons} />
-						<YouTubeIcon className={styles.icons} />
-						<TwitterIcon className={styles.icons} />
-						<InstagramIcon className={styles.icons} />
-
-					</div>
-
-				</div>
-
-			</footer>
-		</React.Fragment>
-	);
+            {/* Copyright Text */}
+            <Box mt={2} display="flex" justifyContent="center">
+              <Typography variant="body2" align="center" className="text-[14px] pt-2">
+                &copy; {new Date().getFullYear()} Your Company Name. All rights reserved.
+              </Typography>
+            </Box>
+          </Container>
+        </Box>
+      </Box>
+    </Box>
+  );
 }
+
+export default Footer;
