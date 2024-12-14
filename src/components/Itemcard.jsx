@@ -10,7 +10,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 
 export default function Itemcard() {
   return (
-    <Card sx={{ maxWidth: 545, borderRadius: '10px', boxShadow: 'none' }}>
+    <Card sx={{ maxWidth: 545, borderRadius: '10px' }}>
       <CardActionArea>
         <CardMedia
           component="img"

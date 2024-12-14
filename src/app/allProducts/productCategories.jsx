@@ -18,7 +18,7 @@ const TreeNode = ({ node, selectedNode, setSelectedNode }) => {
   const hasChildren = node.children && node.children.length > 0;
 
   // Generate a random number between 1 and 100 for each node
-  const randomNumber = Math.floor(Math.random() * 100) + 1;
+  const randomNumber = 45;
 
   const toggleExpand = () => setIsExpanded((prev) => !prev);
 

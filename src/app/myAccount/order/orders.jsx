@@ -19,7 +19,7 @@ export default function Orders() {
         </Typography>
         <Button sx={{ backgroundColor: '#e91e63', color: 'white' }} onClick={()=>setshowDetails(!showDetails)}>View</Button>
       </Grid>
-      <Grid size={{ xs: 12 }} container sx={{ backgroundColor: 'aliceblue' }} className="p-3">
+      <Grid size={{ xs: 12 }} container sx={{ backgroundColor: 'white' }} className="p-3">
         <Grid size={{ xs: 12, md: 6 }}>
           <Typography className='font-bold'>Shipping Address</Typography>
           <Typography>Uttara, sector 14,road 16,house 78, B2 , Dhaka, Dhaka </Typography>

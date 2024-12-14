@@ -1,4 +1,4 @@
-import { Typography,Button } from '@mui/material';
+import { Typography,Button, Grid, Grid2 } from '@mui/material';
 import FlashSale from './flashSale'
 import Recom from './recommended';
 import Category from './categories';
@@ -13,24 +13,25 @@ const images = [
 ];
 
 const Home = ()=>{
-    return <div className='px-7 mt-15'>
-        <div style={{marginTop:"87px"}}>
+    return <div className='mt-15'>
+        <Grid2 sx={{marginTop:{xs:"123px",md:"87px"}}}>
         <FullPageCarousel images={images} />
-        </div>
+        </Grid2>
         
-        <Typography sx={{my:2}} className='text-2xl'>Flash Sale</Typography>
+        <div className='px-5 md:px-7'>
+        <Typography sx={{my:2,textAlign:{xs:'center',md:'start'}}} className='text-2xl'>Flash Sale</Typography>
         <FlashSale/>
 
-        <Typography sx={{my:2}} className='text-2xl'>Categories</Typography>
+        <Typography sx={{my:2,textAlign:{xs:'center',md:'start'}}} className='text-2xl'>Categories</Typography>
         <Category/>
         
-        <Typography sx={{mt:4}} className='text-2xl'>Just For You</Typography>
+        <Typography sx={{mt:4,textAlign:{xs:'center',md:'start'}}} className='text-2xl'>Just For You</Typography>
         <Recom/>
 
         <div className='flex justify-center items-center pb-5'>
         <Button variant="outlined" sx={{width:"400px"}}>Load More</Button>
-</div>
-      
+        </div>
+        </div>
 
         </div>
 }

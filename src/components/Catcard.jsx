@@ -10,24 +10,29 @@ import CardActionArea from '@mui/material/CardActionArea';
 
 export default function Catcard({catname,img}) {
   return (
-    <Card sx={{  borderRadius: '0px', boxShadow: 'none',minHeight:"148.5px",
-    borderTop:"1px solid #e2e2e2",borderRight:"1px solid #e2e2e2" }}>
+    <Card sx={{  borderRadius: '0px', boxShadow: 'none',
+    border:"1px solid #e2e2e2"}}>
       <CardActionArea className="flex flex-col">
         <CardMedia
         
           component="img"
           image={img}
           alt="green iguana"
-          sx={{ objectFit: "contain" ,width:'80px',height:'80px',paddingTop:"15px",transition: "transform 0.7s ease-in-out",
+          sx={{ objectFit: "contain",
+            width:'60px',height:'60px',paddingTop:"15px",transition: "transform 0.7s ease-in-out",
             "&:hover": { transform: "scale3d(1.05, 1.05, 1)" }
           }}
         />
         <CardContent>
 
-         <div className='text-center' style={{height:"20px"}} >
+         <Typography component='div' className='text-center' sx={{ 
+        height:'40px',
+         padding:'2px',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis'}} >
         {catname}
 
-         </div>
+         </Typography>
 
      
         </CardContent>

@@ -18,7 +18,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   margin:0;padding: 0;
-  background-color:aliceblue
+  background-color:white
 }
 
 .default_color{

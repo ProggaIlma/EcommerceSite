@@ -7,9 +7,10 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
+import {  Autoplay, Pagination } from 'swiper/modules';
 
 // import required modules
-import { Zoom,FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 
 function CustomPaging({images}) {
@@ -24,10 +25,14 @@ function CustomPaging({images}) {
         }}
         spaceBetween={10}
         loop={true}
-        zoom={true}
-        navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[Zoom,FreeMode, Navigation, Thumbs]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[ Autoplay,Pagination]}
         className="mySwiper2"
       >
         {

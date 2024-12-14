@@ -9,7 +9,7 @@ import TextRating from './Rating';
 
 export default function RecomItemcard() {
   return (
-    <Card sx={{ maxWidth: 545, borderRadius: '0px', boxShadow: 'none' }}>
+    <Card sx={{ maxWidth: 545, borderRadius: '8px' }}>
       <CardActionArea>
         <CardMedia
           component="img"

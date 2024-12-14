@@ -175,7 +175,7 @@ const AllProducts = () => {
         }}
       ></div>
       <Grid container spacing={4} className="px-5">
-        <Grid size={{ xs: 12, md: 3 }} className="pl-5">
+        <Grid size={{ xs: 0, md: 3 }} className="pl-5" sx={{display:{xs:"none",md:"block"}}}>
           <PriceSlider />
           <div className="mt-5">
       <Typography className="color_black">Product Categories</Typography>
@@ -189,7 +189,7 @@ const AllProducts = () => {
 
         <Grid container spacing={2} size={{ xs: 12, md: 9 }}>
           <Grid size={{ xs: 12 }} className="flex  items-center justify-between">
-            <Stack direction="row" spacing={1} className="flex  items-center">
+            <Stack direction="row" spacing={1} className="items-center"sx={{display:{xs:"none",md:"flex"}}}>
               {pathText && <Chip label={pathText} size="small" color="secondary" className="text-xs" onDelete={handleDelete} />}
               <Typography color="secondary" className="text-xs" sx={{ cursor: 'pointer' }}>
                 Clear All

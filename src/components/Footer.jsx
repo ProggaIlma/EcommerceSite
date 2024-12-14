@@ -6,19 +6,31 @@ import { Facebook, Twitter, Instagram } from '@mui/icons-material';
 
 function Footer() {
   return (
-    <Box sx={{ backgroundColor: 'aliceblue'}}>
+    <Box sx={{ backgroundColor: 'white'}}>
       {' '}
-      {/* Background color set to aliceblue */}
+      
       <Box sx={{ position: 'relative', overflow: 'hidden', color: 'white' }}>
-        {/* Wave SVG with color #44776d */}
+       
+        <Box sx={{ display: {  xs: 'none',sm: 'block', md: 'none' }}}>
+        <svg viewBox="0 25 100 15" preserveAspectRatio="none" >
+ <g>
+  <path d="M100,30 Q70,40 50,30 T0,30 v10 h100Z" 
+        style={{fill:'#44776d', strokeLinejoin:'round', stroke:'#ffffff',strokeWidth:"0"}} 
+        />
+ </g>
+</svg></Box>
         <Box
           component="svg"
-          viewBox="0 0 1240 280" // Increased the viewBox height to make the wave taller
+          viewBox="0 0 1240 280" 
           sx={{
-            fill: '#44776d', // Wave color set to #44776d
+            fill: '#44776d', display: { xs: 'none', md: 'block' } 
           }}
         >
-          <path d="M0,192L40,202.7C80,213,160,235,240,237.3C320,240,400,224,480,213.3C560,202,640,192,720,186.7C800,181,880,181,960,186.7C1040,192,1120,202,1200,213.3C1280,224,1360,235,1400,240L1440,245L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+          <path
+           d="M0,192L40,202.7C80,213,160,235,240,237.3C320,240,400,224,480,213.3C560,202,640,192,
+           720,186.7C800,181,880,181,960,186.7C1040,192,1120,202,1200,213.3C1280,224,1360,235,1400
+           ,240L1440,245L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,
+           320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
         </Box>
 
         <Box

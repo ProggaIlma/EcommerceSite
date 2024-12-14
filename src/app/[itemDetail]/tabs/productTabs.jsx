@@ -11,7 +11,7 @@ export default function ProductTabs() {
 
   return (
     <Fragment>
-      <div className="flex justify-center items-center w-full mb-8">
+      <div className="flex justify-center items-center w-full mb-8 flex-wrap">
         <input type="radio" id="desc" name="fav_desc" value="HTML" style={{ display: 'none' }} />
         <label
           htmlFor="desc"
@@ -22,11 +22,11 @@ export default function ProductTabs() {
         >
           <Typography>DESCRIPTION</Typography>
         </label>
-        <br />
+        <br /><br />
 
         <input type="radio" id="use" name="fav_use" value="HTML" style={{ display: 'none' }} />
         <label htmlFor="use" style={value == 'HOW TO USE' ? styles.selected : styles.not_selected} onClick={() => setValue('HOW TO USE')}>
-          <Typography>HOW TO USE</Typography>
+          <Typography component='div' className='flex flex-wrap'>HOW TO USE</Typography>
         </label>
         <br />
 
@@ -64,20 +64,20 @@ const styles = {
     backgroundColor: '#44776d',
     color: 'white',
     padding: '12px',
-    marginRight: '5px',
+    marginRight: '12px',
     borderRadius: '8px',
     cursor: 'pointer',
-    width: '12%',
-    textAlign: 'center',
+    width: 'max-content',
+    textAlign: 'center',marginBottom:"8px"
   },
   not_selected: {
     backgroundColor: '#e5e7eb',
     color: '#6b7080',
     padding: '12px',
     borderRadius: '8px',
-    marginRight: '5px',
+    marginRight: '12px',
     cursor: 'pointer',
-    width: '12%',
-    textAlign: 'center',
+    width: 'max-content',
+    textAlign: 'center',marginBottom:"8px"
   },
 };

@@ -80,12 +80,10 @@ export default function RootLayout(props) {
           <ThemeProvider theme={theme}>
           <CartProvider>
           <Appbar top={'0px'} toggleDrawer={handleDrawerToggle}/>
-            {/* <HideOnScroll {...props}> */}
-              {/* <AppBar> */}
-              <Divider/>
+           
+         
                 <TopAppbar />
-              {/* </AppBar> */}
-            {/* </HideOnScroll> */}
+           
           
             <Box
         component="nav"

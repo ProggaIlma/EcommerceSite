@@ -29,7 +29,7 @@ const ProductInfo = () => {
         </div>
         <div
           style={{
-            backgroundColor: '#ffffff',
+            backgroundColor: '#f3f4f6',
             borderRadius: '10px',
             padding: '15px',
           }}

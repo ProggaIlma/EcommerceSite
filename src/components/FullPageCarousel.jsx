@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 
 
 // import required modules
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import {  Autoplay, Pagination } from 'swiper/modules';
 
 
 const FullPageCarousel = ({ images }) => {
@@ -27,11 +27,14 @@ const FullPageCarousel = ({ images }) => {
         spaceBetween={30}
         effect={'fade'}
         loop={true}
-        navigation={true}
-        pagination={{
-          clickable: true,
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
         }}
-        modules={[EffectFade, Navigation, Pagination]}
+        pagination={{
+          dynamicBullets: true,
+        }}
+        modules={[ Autoplay,Pagination]}
         className="mySwiper"
       >
         {
